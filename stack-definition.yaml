@@ -4,6 +4,8 @@ description: A minimal stack that we can use to experience the stack authoring p
 categories:
   - name: "⬅️Ingress"
     id: ingress
+  - name: "📑 Logging"
+    id: logging
 components:
   - name: Nginx
     variable: nginx
@@ -46,5 +48,36 @@ components:
           ],
           "uiSchema": {},
           "metaData": {}
+        }
+      ]
+  - name: Loki
+    variable: loki
+    category: logging
+    logo: https://raw.githubusercontent.com/gimlet-io/gimlet-stack-reference/main/assets/loki.png
+    description: ''
+    onePager: ''
+    schema: |-
+      {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "$id": "http://example.com/example.json",
+        "type": "object",
+        "title": "The root schema",
+        "description": "The root schema comprises the entire JSON document.",
+        "properties": {
+          "enabled": {
+            "$id": "#/properties/enabled",
+            "type": "boolean",
+            "title": "Enabled"
+          }
+        }
+      }
+    uiSchema: |-
+      [
+        {
+        "schemaIDs": [
+          "#/properties/enabled"
+        ],
+        "uiSchema": {},
+        "metaData": {}
         }
       ]
